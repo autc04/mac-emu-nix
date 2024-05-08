@@ -108,7 +108,9 @@
               sha256 = "sha256-LWvnjDo988tldZJFfhdQcoQOo4O11wxvUBra3Wrz8Yw=";
             };
             unpackPhase = "tar xfvzi $src; cd ua608d";
-            buildPhase = ''
+
+            # the ua608d source archive contains a heap of header files named in MS DOS style, but no main source file.
+            patchPhase = ''
               cat <<EOF >main.c
               #include <stdio.h>
               #include <string.h>
@@ -116,8 +118,9 @@
               #include <errno.h>
               #include "source/AAAATOOL.h"
               EOF
+            '';
+            buildPhase = ''
               $CC main.c -o ua608d
-
             '';
             installPhase = ''
               mkdir -p $out/bin
