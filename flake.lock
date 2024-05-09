@@ -18,6 +18,22 @@
         "type": "github"
       }
     },
+    "macemu": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1712057914,
+        "narHash": "sha256-QqvdfFIIEiIw2sV6MUCxoAWYLWto59moZQ8wZ4+e/nA=",
+        "owner": "kanjitalk755",
+        "repo": "macemu",
+        "rev": "d7c030312d94456bf9c9615ee8732a8ff01113f4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kanjitalk755",
+        "repo": "macemu",
+        "type": "github"
+      }
+    },
     "minivmac": {
       "flake": false,
       "locked": {
@@ -65,6 +81,7 @@
     "root": {
       "inputs": {
         "flake-parts": "flake-parts",
+        "macemu": "macemu",
         "minivmac": "minivmac",
         "nixpkgs": "nixpkgs"
       }
